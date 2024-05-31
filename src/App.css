@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: 'FONTSPRING DEMO - Cera Pro'; */
+  font-family: "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.active {
+  font-weight: 600;
+  color: #46A358;
+  padding-bottom: 21px;
+  border-bottom: 3px solid #46A358;
+  transition: all ease-in-out 0.3s;
+}
+
+.slick-dots li button:before {
+  color: green !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: green !important;
+}
+
+li {
+  list-style: none;
+}

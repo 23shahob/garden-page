@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'FONTSPRING DEMO - Cera Pro';
+    src: url('FONTSPRINGDEMO-CeraProBlackRegular.woff2') format('woff2'),
+        url('FONTSPRINGDEMO-CeraProBlackRegular.woff') format('woff'),
+        url('FONTSPRINGDEMO-CeraProBlackRegular.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Cera Pro';
+    src: url('FONTSPRINGDEMO-CeraProBold.woff2') format('woff2'),
+        url('FONTSPRINGDEMO-CeraProBold.woff') format('woff'),
+        url('FONTSPRINGDEMO-CeraProBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Cera Pro';
+    src: url('FONTSPRINGDEMO-CeraProLightRegular.woff2') format('woff2'),
+        url('FONTSPRINGDEMO-CeraProLightRegular.woff') format('woff'),
+        url('FONTSPRINGDEMO-CeraProLightRegular.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Cera Pro';
+    src: url('FONTSPRINGDEMO-CeraProThinRegular.woff2') format('woff2'),
+        url('FONTSPRINGDEMO-CeraProThinRegular.woff') format('woff'),
+        url('FONTSPRINGDEMO-CeraProThinRegular.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Cera Pro';
+    src: url('FONTSPRINGDEMO-CeraProMediumRegular.woff2') format('woff2'),
+        url('FONTSPRINGDEMO-CeraProMediumRegular.woff') format('woff'),
+        url('FONTSPRINGDEMO-CeraProMediumRegular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FONTSPRING DEMO - Cera Pro';
+    src: url('FONTSPRINGDEMO-CeraProRegular.woff2') format('woff2'),
+        url('FONTSPRINGDEMO-CeraProRegular.woff') format('woff'),
+        url('FONTSPRINGDEMO-CeraProRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
