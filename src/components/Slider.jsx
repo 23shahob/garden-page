@@ -3,11 +3,12 @@ import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-const RangeSlider = () => {
-  const [range, setRange] = useState([39, 1230]);
+const RangeSlider = ({ setPriceRange }) => {
+  const [range, setRange] = useState([39, 300]);
 
   const handleChange = (event, newValue) => {
     setRange(newValue);
+    setPriceRange(newValue);
   };
 
   return (
@@ -17,7 +18,7 @@ const RangeSlider = () => {
         onChange={handleChange}
         valueLabelDisplay="auto"
         min={39}
-        max={2000}
+        max={500}
         sx={{
           "& .MuiSlider-thumb": {
             color: "#46A358",

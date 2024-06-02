@@ -1,15 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.svg";
 import { IoSearch } from "react-icons/io5";
 import { IoCartOutline } from "react-icons/io5";
 import { BiLogIn } from "react-icons/bi";
 import { IoMdClose } from "react-icons/io";
+import { AppContext } from "../AppContext";
 
 const Header = () => {
   const [isActiveSearch, setIsActiveSearch] = useState(true);
+  const { basketCount } = useContext(AppContext);
+
   return (
-    <div className="fixed z-10 w-full h-16 border-b border-green-200 bg-white">
+    <div className="fixed z-10 h-16 w-full border-b border-green-200 bg-white">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between">
         <div>
           <Link to="./">
@@ -57,13 +60,18 @@ const Header = () => {
               </div>
             )}
           </div>
-          <div className="cursor-pointer">
-            <Link to="/cart">
+          <div className="relative cursor-pointer">
+            <Link to="/shop/cart">
               <IoCartOutline className="h-6 w-6 hover:text-green-500" />
+              {basketCount > 0 && (
+                <div className="absolute -right-2 -top-2 flex h-4 w-4 items-center justify-center rounded-full bg-[#46A358] text-xs text-white">
+                  {basketCount}
+                </div>
+              )}
             </Link>
           </div>
           <div className="flex h-[35px] w-[100px] items-center justify-around rounded-lg bg-[#46A358] hover:bg-green-500">
-            <button className="flex items-center gap-1 text-white">
+            <button className="flex items-center gap-1 text-white transition duration-300">
               <BiLogIn className="h-5 w-5" /> <span>Login</span>
             </button>
           </div>

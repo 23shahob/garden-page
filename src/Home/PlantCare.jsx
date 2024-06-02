@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const PlantCare = () => {
-  return (
-    <div className='pt-16'>PlantCare</div>
-  )
-}
+  return <div className="mx-auto max-w-7xl pt-16">PlantCare</div>;
+};
 
-export default PlantCare
+export default PlantCare;

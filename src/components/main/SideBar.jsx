@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import RangeSlider from "../Slider";
 import Supersale from "../../assets/images/supersale.svg";
 
-const SideBar = () => {
+const SideBar = ({ setPriceRange }) => {
   const [category, setCategory] = useState(1);
   return (
     <div className="w-[310px] bg-[#FBFBFB] px-4 py-3">
@@ -91,7 +91,7 @@ const SideBar = () => {
         </p>
         <div className="px-3">
           <div className="mb-4">
-            <RangeSlider />
+            <RangeSlider setPriceRange={setPriceRange} />
           </div>
           <button className="h-[35px] w-[90px] rounded-lg bg-[#46A358] font-bold leading-5 text-white outline-none hover:bg-green-500">
             Filter
