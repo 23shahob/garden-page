@@ -329,7 +329,7 @@ const Checkout = () => {
             </p>
           </div>
           <div>
-            <div className="mb-4 flex flex-col gap-y-2">
+            <div className="mb-4 flex max-h-[400px] overflow-y-scroll flex-col gap-y-2">
               {basket.map((product) => (
                 <div
                   key={product.id}
@@ -471,7 +471,7 @@ const Checkout = () => {
         {order && (
           <div className="fixed inset-0 z-20 flex items-center justify-center bg-black bg-opacity-25 backdrop-blur-sm">
             {" "}
-            <div className="w-[578px] h-screen overflow-y-scroll bg-white shadow-2xl">
+            <div className="h-screen w-[578px] overflow-y-scroll bg-white shadow-2xl">
               <div className="relative flex h-[156px] flex-col items-center justify-center border-b border-green-200 bg-green-50 pt-7">
                 <img
                   className="mb-4 h-20 w-16"
@@ -544,7 +544,7 @@ const Checkout = () => {
                     </p>
                   </div>
                   <div>
-                    <div className="mb-5 flex flex-col gap-y-2">
+                    <div className="mb-5 flex max-h-[300px] flex-col gap-y-2 overflow-y-scroll">
                       {basket.map((product) => (
                         <div
                           key={product.id}
