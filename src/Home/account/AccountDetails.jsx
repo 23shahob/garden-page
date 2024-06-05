@@ -224,7 +224,7 @@ const AccountDetails = () => {
               </div>
               <div className="w-1/2"></div>
             </div>
-            <button className="mb-20 h-10 w-[130px] rounded bg-[#46A358] text-sm font-bold leading-4 text-white transition duration-300 hover:bg-green-500">
+            <button className="mb-20 h-10 w-[130px] rounded bg-[#46A358] text-sm font-bold leading-4 text-white outline-none transition duration-300 hover:bg-green-500">
               Save Change
             </button>
           </div>

@@ -42,7 +42,7 @@ const Header = () => {
             {/* <NavLink to="/account">Account</NavLink> */}
           </li>
         </ul>
-        <div className="flex items-center gap-5">
+        <div className="flex items-center gap-5 transition duration-500">
           <div className="cursor-pointer">
             {isActiveSearch ? (
               <IoSearch
@@ -91,9 +91,16 @@ const Header = () => {
                 </button>
               </SignInButton>
             </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
+            <div className="flex items-center gap-3">
+              <SignedIn>
+                <Link to="/account">
+                  <span className="flex h-[35px] items-center justify-center gap-2 rounded-lg bg-[#46A358] px-4 text-white transition duration-300 hover:bg-green-500">
+                    user
+                  </span>
+                </Link>
+                <UserButton></UserButton>
+              </SignedIn>
+            </div>
           </div>
         </div>
       </div>

@@ -93,9 +93,9 @@ const SideBar = ({ setPriceRange }) => {
           <div className="mb-4">
             <RangeSlider setPriceRange={setPriceRange} />
           </div>
-          <button className="h-[35px] w-[90px] rounded-lg bg-[#46A358] font-bold leading-5 text-white outline-none hover:bg-green-500">
+          {/* <button className="h-[35px] w-[90px] rounded-lg bg-[#46A358] font-bold leading-5 text-white outline-none hover:bg-green-500">
             Filter
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="mb-5">

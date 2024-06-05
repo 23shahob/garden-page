@@ -31,7 +31,7 @@ const RelatedProducts = () => {
                 <div
                   onClick={() => addToCart(flower)}
                   key={flower.id}
-                  className="group relative cursor-pointer border-t-2 border-white p-4 shadow-md hover:border-t-2 hover:border-[#46A358]"
+                  className="group relative cursor-pointer border-t-2 border-white p-4 shadow-md transition-shadow hover:border-t-2 hover:border-[#46A358] hover:shadow-xl hover:shadow-green-300"
                 >
                   <div className="relative mb-8 h-[250px] w-[220px]">
                     <img
@@ -44,7 +44,7 @@ const RelatedProducts = () => {
                         className="bg-transparent"
                         onClick={(e) => {
                           e.preventDefault();
-                          e.stopPropagation()
+                          e.stopPropagation();
                           addToBasket(flower);
                         }}
                       >
@@ -76,7 +76,7 @@ const RelatedProducts = () => {
                 <div
                   onClick={() => addToCart(flower)}
                   key={flower.id}
-                  className="group relative cursor-pointer border-t-2 border-white p-4 shadow-md hover:border-t-2 hover:border-[#46A358]"
+                  className="group relative cursor-pointer border-t-2 border-white p-4 shadow-md transition-shadow hover:border-t-2 hover:border-[#46A358] hover:shadow-xl hover:shadow-green-300"
                 >
                   <div className="relative mb-8 h-[250px] w-[220px]">
                     <img
@@ -120,7 +120,7 @@ const RelatedProducts = () => {
                 <div
                   onClick={() => addToCart(flower)}
                   key={flower.id}
-                  className="group relative cursor-pointer border-t-2 border-white p-4 shadow-md hover:border-t-2 hover:border-[#46A358]"
+                  className="group relative cursor-pointer border-t-2 border-white p-4 shadow-md transition-shadow hover:border-t-2 hover:border-[#46A358] hover:shadow-xl hover:shadow-green-300"
                 >
                   <div className="relative mb-8 h-[250px] w-[220px]">
                     <img

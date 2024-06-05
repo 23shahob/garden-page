@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 import "./assets/fonts.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/header/Header";
 import Home from "./Home/Home";
 import Shop from "./Home/Shop";
@@ -11,9 +11,12 @@ import Cart from "./Home/Cart";
 import Footer from "./components/footer/Footer";
 import { AppProvider } from "./components/AppContext";
 import Checkout from "./components/Checkout";
-import Account from "./Home/account/Account";
+import Account from "./Home/Account/Account";
 
 const App = () => {
+  const location = useLocation();
+  const showFooter = location.pathname !== "/account";
+
   return (
     <AppProvider>
       <Header />
@@ -26,7 +29,7 @@ const App = () => {
         <Route path="/shop/checkout" element={<Checkout />} />
         <Route path="/account" element={<Account />} />
       </Routes>
-      <Footer />
+      {showFooter && <Footer />}
     </AppProvider>
   );
 };

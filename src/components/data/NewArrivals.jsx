@@ -16,7 +16,7 @@ const NewArrivals = ({ priceRange }) => {
           <div
             onClick={() => addToCart(second)}
             key={second.id}
-            className="group relative border-t-2 border-white p-4 shadow-md hover:border-t-2 hover:border-[#46A358]"
+            className="group relative border-t-2 border-white p-4 shadow-md transition-shadow hover:scale-[1.01] hover:border-t-2 hover:border-[#46A358] hover:shadow-lg hover:shadow-green-300"
           >
             <div className="relative mb-8 h-[250px] w-[250px]">
               <img
@@ -29,17 +29,17 @@ const NewArrivals = ({ priceRange }) => {
                   className="bg-transparent"
                   onClick={(e) => {
                     e.preventDefault();
-                    e.stopPropagation()
+                    e.stopPropagation();
                     addToBasket(second);
                   }}
                 >
-                  <IoCartOutline className="hover:text-[#46A358] h-7 w-7" />
+                  <IoCartOutline className="h-7 w-7 hover:text-[#46A358]" />
                 </button>
                 <button className="bg-transparent">
-                  <MdFavoriteBorder className="hover:text-[#46A358] h-7 w-7" />
+                  <MdFavoriteBorder className="h-7 w-7 hover:text-[#46A358]" />
                 </button>
                 <button className="bg-transparent">
-                  <IoSearch className="hover:text-[#46A358] h-7 w-7" />
+                  <IoSearch className="h-7 w-7 hover:text-[#46A358]" />
                 </button>
               </div>
             </div>

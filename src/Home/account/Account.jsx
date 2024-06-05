@@ -9,6 +9,8 @@ import { MdOutlineReportGmailerrorred } from "react-icons/md";
 import { AppContext } from "../../components/AppContext";
 import { BiLogIn } from "react-icons/bi";
 import AccountDetails from "./AccountDetails";
+import Address from "./Address";
+import Orders from "./Orders";
 
 const Account = () => {
   const { selectedTab, setSelectedTab } = useContext(AppContext);
@@ -16,7 +18,7 @@ const Account = () => {
   return (
     <div className="mx-auto max-w-7xl pt-20">
       <div className="flex gap-7 pt-12">
-        <div className="w-1/4 bg-[#FBFBFB] h-[420px] pb-5 pt-4">
+        <div className="h-[420px] w-1/4 bg-[#FBFBFB] pb-5 pt-4">
           <p className="mb-4 px-[18px] text-lg font-bold leading-4 text-[#3D3D3D]">
             My Account
           </p>
@@ -148,7 +150,11 @@ const Account = () => {
             </span>
           </button>
         </div>
-        <div className="w-3/4">{selectedTab === 1 && <AccountDetails />}</div>
+        <div className="w-3/4">
+          {selectedTab === 1 && <AccountDetails />}
+          {selectedTab === 2 && <Address />}
+          {selectedTab === 3 && <Orders />}
+        </div>
       </div>
     </div>
   );

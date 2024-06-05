@@ -60,7 +60,10 @@ const BlogPost = () => {
         </div>
         <div className="grid grid-cols-4 gap-11">
           {BLOGPOSTS.map((info) => (
-            <div key={info.id} className="w-[268px] bg-[#FBFBFB] ">
+            <div
+              key={info.id}
+              className="w-[268px] bg-[#FBFBFB] hover:shadow-2xl hover:shadow-green-300"
+            >
               <div>
                 <img className="object-cover" src={info.img} alt="" />
               </div>

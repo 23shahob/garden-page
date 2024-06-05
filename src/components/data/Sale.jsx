@@ -15,7 +15,7 @@ const Sale = ({ priceRange }) => {
           <div
             onClick={() => addToCart(third)}
             key={third.id}
-            className="group relative border-t-2 border-white p-4 shadow-md hover:border-t-2 hover:border-[#46A358]"
+            className="group relative border-t-2 border-white p-4 shadow-md transition-shadow hover:scale-[1.01] hover:border-t-2 hover:border-[#46A358] hover:shadow-lg hover:shadow-green-300"
           >
             <div className="relative mb-8 h-[250px] w-[250px]">
               <img
