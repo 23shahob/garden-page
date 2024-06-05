@@ -9,7 +9,7 @@ import { AppContext } from "../AppContext";
 import { Link } from "react-router-dom";
 
 const Data = ({ changeTab, priceRange }) => {
-  const { addToCart, addToBasket } = useContext(AppContext);
+  const { addToCart, addToBasket, search, filterData } = useContext(AppContext);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
@@ -27,7 +27,7 @@ const Data = ({ changeTab, priceRange }) => {
       return false;
     })
     .filter(
-      (plant) => plant.price >= priceRange[0] && plant.price <= priceRange[1]
+      (plant) => plant.price >= priceRange[0] && plant.price <= priceRange[1],
     );
 
   const handlePageClick = (page) => {
@@ -49,8 +49,21 @@ const Data = ({ changeTab, priceRange }) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const displayedData = filteredData.slice(
     startIndex,
-    startIndex + itemsPerPage
+    startIndex + itemsPerPage,
   );
+  const filterPrice = (pro) => {
+    switch (filterData) {
+      case "Low":
+        return pro.price < 100;
+      case "Normal":
+        return pro.price >= 100 && pro.price <= 200;
+      case "High":
+        return pro.price > 200;
+      default:
+        return true;
+    }
+  };
+  const filterOption = displayedData.filter(filterPrice);
 
   return (
     <div className="w-full">
@@ -61,48 +74,55 @@ const Data = ({ changeTab, priceRange }) => {
       ) : (
         <>
           <div className="mb-20 grid grid-cols-3 gap-10 bg-[#FBFBFB]">
-            {displayedData.map((flower) => (
-              <Link to="/shop" key={flower.id}>
-                <div
-                  onClick={() => addToCart(flower)}
-                  key={flower.id}
-                  className="group relative border-t-2 border-white p-4 shadow-md hover:border-t-2 hover:border-[#46A358]"
-                >
-                  <div className="relative mb-8 h-[250px] w-[250px]">
-                    <img
-                      className="object-cover"
-                      src={flower.img}
-                      alt={`${flower.name} Img`}
-                    />
-                    <div className="absolute bottom-0 flex translate-x-[50%] items-center justify-center gap-5 opacity-0 transition-opacity group-hover:opacity-100">
-                      <button
-                        className="bg-transparent"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          addToBasket(flower);
-                        }}
-                      >
-                        <IoCartOutline className="h-7 w-7 hover:text-[#46A358]" />
-                      </button>
-                      <button className="bg-transparent">
-                        <MdFavoriteBorder className="h-7 w-7 hover:text-[#46A358]" />
-                      </button>
-                      <button className="bg-transparent">
-                        <IoSearch className="h-7 w-7 hover:text-[#46A358]" />
-                      </button>
+            {filterOption
+              .filter((goods) => {
+                return search.toLowerCase() === ""
+                  ? goods
+                  : goods.name.toLowerCase().includes(search);
+              })
+              .map((flower) => (
+                <Link to="/shop" key={flower.id}>
+                  <div
+                    onClick={() => addToCart(flower)}
+                    key={flower.id}
+                    className="group relative border-t-2 border-white p-4 shadow-md hover:border-t-2 hover:border-[#46A358]"
+                  >
+                    <div className="relative mb-8 h-[250px] w-[250px]">
+                      <img
+                        className="object-cover"
+                        src={flower.img}
+                        alt={`${flower.name} Img`}
+                      />
+                      <div className="absolute bottom-0 flex translate-x-[50%] items-center justify-center gap-5 opacity-0 transition-opacity group-hover:opacity-100">
+                        <button
+                          className="bg-transparent"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            addToBasket(flower);
+                          }}
+                        >
+                          <IoCartOutline className="h-7 w-7 hover:text-[#46A358]" />
+                        </button>
+                        <button className="bg-transparent">
+                          <MdFavoriteBorder className="h-7 w-7 hover:text-[#46A358]" />
+                        </button>
+                        <button className="bg-transparent">
+                          <IoSearch className="h-7 w-7 hover:text-[#46A358]" />
+                        </button>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="mb-2 font-normal leading-4 text-[#3D3D3D]">
+                        {flower.name}
+                      </p>
+                      <p className="text-lg font-bold leading-4 text-[#46A358]">
+                        ${flower.price}
+                      </p>
                     </div>
                   </div>
-                  <div>
-                    <p className="mb-2 font-normal leading-4 text-[#3D3D3D]">
-                      {flower.name}
-                    </p>
-                    <p className="text-lg font-bold leading-4 text-[#46A358]">
-                      ${flower.price}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              ))}
           </div>
           <div className="flex justify-end">
             {currentPage > 1 && (

@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AppContext } from "../AppContext";
 
 const Selecting = ({ setChangeTab }) => {
+  const { filterData, handleOption } = useContext(AppContext);
   const [selectedTab, setSelectedTab] = useState("All Plants");
 
   const handleTabClick = (tab) => {
@@ -29,13 +31,17 @@ const Selecting = ({ setChangeTab }) => {
         <p className="mr-2 text-[15px] font-normal leading-4 text-[#3D3D3D]">
           Sort by:
         </p>
-        <select className="rounded border border-none border-gray-300 text-[15px] font-normal leading-4 text-[#3D3D3D] outline-none">
+        <select
+          value={filterData}
+          onChange={handleOption}
+          className="rounded border border-none border-gray-300 text-[15px] font-normal leading-4 text-[#3D3D3D] outline-none"
+        >
           <option value="default" hidden>
             Default sorting
           </option>
-          <option value="flower">Low</option>
-          <option value="price-asc">Normal</option>
-          <option value="price-desc">High</option>
+          <option value="Low">$0-100</option>
+          <option value="Normal">$100-200</option>
+          <option value="High">$200-...</option>
         </select>
       </div>
     </div>

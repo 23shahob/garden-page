@@ -44,6 +44,7 @@ const RelatedProducts = () => {
                         className="bg-transparent"
                         onClick={(e) => {
                           e.preventDefault();
+                          e.stopPropagation()
                           addToBasket(flower);
                         }}
                       >
@@ -83,18 +84,21 @@ const RelatedProducts = () => {
                       src={flower.img}
                       alt={`${flower.name} Img`}
                     />
-                    <div className="absolute bottom-0 flex translate-x-[65%] items-center justify-center gap-5 opacity-0 transition-opacity group-hover:opacity-100">
+                    <div className="absolute bottom-0 flex translate-x-[40%] items-center justify-center gap-5 opacity-0 transition-opacity group-hover:opacity-100">
                       <button
                         className="bg-transparent"
-                        onClick={() => addToCart(flower)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToBasket(flower);
+                        }}
                       >
-                        <IoCartOutline className="hover:text-[#46A358]" />
+                        <IoCartOutline className="h-7 h-7 w-7 w-7 hover:text-[#46A358]" />
                       </button>
                       <button className="bg-transparent">
-                        <MdFavoriteBorder className="hover:text-[#46A358]" />
+                        <MdFavoriteBorder className="h-7 h-7 w-7 w-7 hover:text-[#46A358]" />
                       </button>
                       <button className="bg-transparent">
-                        <IoSearch className="hover:text-[#46A358]" />
+                        <IoSearch className="h-7 h-7 w-7 w-7 hover:text-[#46A358]" />
                       </button>
                     </div>
                   </div>
@@ -124,18 +128,21 @@ const RelatedProducts = () => {
                       src={flower.img}
                       alt={`${flower.name} Img`}
                     />
-                    <div className="absolute bottom-0 flex translate-x-[65%] items-center justify-center gap-5 opacity-0 transition-opacity group-hover:opacity-100">
+                    <div className="absolute bottom-0 flex translate-x-[40%] items-center justify-center gap-5 opacity-0 transition-opacity group-hover:opacity-100">
                       <button
                         className="bg-transparent"
-                        onClick={() => addToCart(flower)}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          addToBasket(flower);
+                        }}
                       >
-                        <IoCartOutline className="hover:text-[#46A358]" />
+                        <IoCartOutline className="h-7 w-7 hover:text-[#46A358]" />
                       </button>
                       <button className="bg-transparent">
-                        <MdFavoriteBorder className="hover:text-[#46A358]" />
+                        <MdFavoriteBorder className="h-7 w-7 hover:text-[#46A358]" />
                       </button>
                       <button className="bg-transparent">
-                        <IoSearch className="hover:text-[#46A358]" />
+                        <IoSearch className="h-7 w-7 hover:text-[#46A358]" />
                       </button>
                     </div>
                   </div>

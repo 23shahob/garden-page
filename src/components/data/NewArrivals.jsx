@@ -29,6 +29,7 @@ const NewArrivals = ({ priceRange }) => {
                   className="bg-transparent"
                   onClick={(e) => {
                     e.preventDefault();
+                    e.stopPropagation()
                     addToBasket(second);
                   }}
                 >

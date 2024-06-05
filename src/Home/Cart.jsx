@@ -146,7 +146,12 @@ const Cart = () => {
               type="text"
               placeholder="Enter coupon code here..."
             />
-            <button className="h-full w-[102px] bg-[#46A358] text-[15px] font-bold leading-4 text-white">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+              className="h-full w-[102px] bg-[#46A358] text-[15px] font-bold leading-4 text-white"
+            >
               Apply
             </button>
           </form>
@@ -183,12 +188,15 @@ const Cart = () => {
               ${total.toFixed(2)}
             </p>
           </div>
-          <Link to="/shop/checkout">
-            {" "}
-            <button className="mb-3 h-10 w-full rounded-md bg-[#46A358] text-[15px] font-bold leading-4 text-white outline-none transition duration-300 hover:bg-green-500">
-              Proceed To Checkout
-            </button>
-          </Link>
+          {basket.length ? (
+            <Link to="/shop/checkout">
+              <button className="mb-3 h-10 w-full rounded-md bg-[#46A358] text-[15px] font-bold leading-4 text-white outline-none transition duration-300 hover:bg-green-500">
+                Proceed To Checkout
+              </button>
+            </Link>
+          ) : (
+            ""
+          )}
           <button className="mx-auto flex bg-transparent text-[15px] leading-4 text-[#46A358] outline-none">
             <Link to="/"> Continue Shopping</Link>
           </button>

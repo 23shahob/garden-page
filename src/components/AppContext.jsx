@@ -9,6 +9,12 @@ export const AppProvider = ({ children }) => {
   const [basket, setBasket] = useState([]);
   const [count, setCount] = useState({});
   const [basketCount, setBasketCount] = useState(0);
+  const [click, setClick] = useState(true);
+  const [search, setSearch] = useState("");
+  const [filterData, setFilterData] = useState("");
+  const [date, setDate] = useState(new Date());
+  const [order, setOrder] = useState(false);
+  const [selectedTab, setSelectedTab] = useState(1);
 
   useEffect(() => {
     const totalCount = basket.reduce(
@@ -85,6 +91,9 @@ export const AppProvider = ({ children }) => {
       return updatedCount;
     });
   };
+  const handleOption = (event) => {
+    setFilterData(event.target.value);
+  };
 
   return (
     <AppContext.Provider
@@ -102,6 +111,18 @@ export const AppProvider = ({ children }) => {
         getCount,
         removeFromBasket,
         basketCount,
+        click,
+        setClick,
+        search,
+        setSearch,
+        filterData,
+        setFilterData,
+        handleOption,
+        date,
+        order,
+        setOrder,
+        selectedTab,
+        setSelectedTab,
       }}
     >
       {children}

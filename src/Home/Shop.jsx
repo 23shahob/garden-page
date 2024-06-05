@@ -1,4 +1,3 @@
-// Shop.js
 import React, { useContext } from "react";
 import { AppContext } from "../components/AppContext";
 import Rating from "@mui/material/Rating";
@@ -141,9 +140,11 @@ const Shop = () => {
                         </button>
                       </div>
                       <div className="flex gap-[10px]">
-                        <button className="h-10 w-[130px] rounded-lg bg-[#46A358] text-sm font-bold text-white transition duration-300 hover:bg-green-500">
-                          BUY NOW
-                        </button>
+                        <Link to="/shop/cart">
+                          <button className="h-10 w-[130px] rounded-lg bg-[#46A358] text-sm font-bold text-white transition duration-300 hover:bg-green-500">
+                            BUY NOW
+                          </button>
+                        </Link>
                         <button
                           onClick={(e) => {
                             e.preventDefault();

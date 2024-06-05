@@ -28,6 +28,7 @@ const Sale = ({ priceRange }) => {
                   className="bg-transparent"
                   onClick={(e) => {
                     e.preventDefault();
+                    e.stopPropagation();
                     addToBasket(third);
                   }}
                 >
