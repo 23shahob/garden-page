@@ -11,7 +11,7 @@ import Cart from "./Home/Cart";
 import Footer from "./components/footer/Footer";
 import { AppProvider } from "./components/AppContext";
 import Checkout from "./components/Checkout";
-import Account from "./Home/Account/Account";
+import Account from "./Home/account/Account";
 
 const App = () => {
   const location = useLocation();
