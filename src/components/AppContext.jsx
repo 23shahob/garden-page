@@ -15,6 +15,7 @@ export const AppProvider = ({ children }) => {
   const [date, setDate] = useState(new Date());
   const [order, setOrder] = useState(false);
   const [selectedTab, setSelectedTab] = useState(1);
+  const [wish, setWish] = useState([]);
 
   useEffect(() => {
     const totalCount = basket.reduce(
@@ -43,6 +44,18 @@ export const AppProvider = ({ children }) => {
         );
       } else {
         return [...prevBasket, { ...product, quantity: 1 }];
+      }
+    });
+  };
+  const addToWish = (card) => {
+    setWish((prev) => {
+      const existing = prev.find((goods) => goods.id === card.id);
+      if (existing) {
+        return prev.map((wishItem) =>
+          wishItem.id === card.id ? { ...wishItem, quantity: 1 } : wishItem,
+        );
+      } else {
+        return [...prev, { ...card, quantity: 1 }];
       }
     });
   };
@@ -116,6 +129,9 @@ export const AppProvider = ({ children }) => {
         setOrder,
         selectedTab,
         setSelectedTab,
+        wish,
+        setWish,
+        addToWish,
       }}
     >
       {children}

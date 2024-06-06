@@ -9,7 +9,7 @@ import { IoSearch } from "react-icons/io5";
 import { PLANTS } from "./data/API";
 
 const RelatedProducts = () => {
-  const { addToCart, addToBasket } = useContext(AppContext);
+  const { addToCart, addToBasket, addToWish } = useContext(AppContext);
 
   const settings = {
     dots: true,
@@ -50,7 +50,14 @@ const RelatedProducts = () => {
                       >
                         <IoCartOutline className="h-7 w-7 hover:text-[#46A358]" />
                       </button>
-                      <button className="bg-transparent">
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          addToWish(flower);
+                        }}
+                        className="bg-transparent"
+                      >
                         <MdFavoriteBorder className="h-7 w-7 hover:text-[#46A358]" />
                       </button>
                       <button className="bg-transparent">
@@ -94,7 +101,14 @@ const RelatedProducts = () => {
                       >
                         <IoCartOutline className="h-7 h-7 w-7 w-7 hover:text-[#46A358]" />
                       </button>
-                      <button className="bg-transparent">
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          addToWish(flower);
+                        }}
+                        className="bg-transparent"
+                      >
                         <MdFavoriteBorder className="h-7 h-7 w-7 w-7 hover:text-[#46A358]" />
                       </button>
                       <button className="bg-transparent">
@@ -138,7 +152,14 @@ const RelatedProducts = () => {
                       >
                         <IoCartOutline className="h-7 w-7 hover:text-[#46A358]" />
                       </button>
-                      <button className="bg-transparent">
+                      <button
+                        onClick={(e) => {
+                          e.preventDefault();
+                          e.stopPropagation();
+                          addToWish(flower);
+                        }}
+                        className="bg-transparent"
+                      >
                         <MdFavoriteBorder className="h-7 w-7 hover:text-[#46A358]" />
                       </button>
                       <button className="bg-transparent">

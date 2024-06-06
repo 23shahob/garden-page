@@ -88,7 +88,7 @@ const Orders = () => {
                         +
                       </button>
                     </div>
-                    <p className="w-[160px] font-bold leading-4 text-[#46A358]">
+                    <p className="w-[130px] font-bold leading-4 text-[#46A358]">
                       ${product.price * getCount(product.id)}
                     </p>
                     <button

@@ -21,6 +21,7 @@ const Shop = () => {
     handleCountPlus,
     handleCountMinus,
     getCount,
+    addToWish,
   } = useContext(AppContext);
   function handleClick(event) {
     event.preventDefault();
@@ -154,7 +155,14 @@ const Shop = () => {
                         >
                           ADD TO CART
                         </button>
-                        <button className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#46A358]">
+                        <button
+                          onClick={(e) => {
+                            // e.preventDefault();
+                            // e.stopPropagation();
+                            addToWish(flower);
+                          }}
+                          className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#46A358]"
+                        >
                           <MdFavoriteBorder className="text-[#46A358]" />
                         </button>
                       </div>

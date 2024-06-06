@@ -7,7 +7,7 @@ import { AppContext } from "../AppContext";
 import { Link } from "react-router-dom";
 
 const NewArrivals = ({ priceRange }) => {
-  const { addToCart, addToBasket } = useContext(AppContext);
+  const { addToCart, addToBasket, addToWish } = useContext(AppContext);
 
   return (
     <div className="mb-20 grid grid-cols-3 gap-10 bg-[#FBFBFB]">
@@ -35,7 +35,14 @@ const NewArrivals = ({ priceRange }) => {
                 >
                   <IoCartOutline className="h-7 w-7 hover:text-[#46A358]" />
                 </button>
-                <button className="bg-transparent">
+                <button
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    addToWish(flower);
+                  }}
+                  className="bg-transparent"
+                >
                   <MdFavoriteBorder className="h-7 w-7 hover:text-[#46A358]" />
                 </button>
                 <button className="bg-transparent">

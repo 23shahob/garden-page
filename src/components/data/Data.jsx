@@ -9,7 +9,8 @@ import { AppContext } from "../AppContext";
 import { Link } from "react-router-dom";
 
 const Data = ({ changeTab, priceRange }) => {
-  const { addToCart, addToBasket, search, filterData } = useContext(AppContext);
+  const { addToCart, addToBasket, search, filterData, addToWish } =
+    useContext(AppContext);
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 9;
@@ -104,7 +105,14 @@ const Data = ({ changeTab, priceRange }) => {
                         >
                           <IoCartOutline className="h-7 w-7 hover:text-[#46A358]" />
                         </button>
-                        <button className="bg-transparent">
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation()
+                            addToWish(flower);
+                          }}
+                          className="bg-transparent"
+                        >
                           <MdFavoriteBorder className="h-7 w-7 hover:text-[#46A358]" />
                         </button>
                         <button className="bg-transparent">

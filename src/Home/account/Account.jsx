@@ -155,7 +155,7 @@ const Account = () => {
           {selectedTab === 1 && <AccountDetails />}
           {selectedTab === 2 && <Address />}
           {selectedTab === 3 && <Orders />}
-          {/* {selectedTab === 4 && <WishList />} */}
+          {selectedTab === 4 && <WishList />}
         </div>
       </div>
     </div>
