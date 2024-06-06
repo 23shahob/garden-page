@@ -7,7 +7,7 @@ const WishList = () => {
   return (
     <div>
       <h1>Your WishList</h1>
-      <div className="max-h-[450px]">
+      <div className="max-h-[450px] overflow-y-scroll">
         {wish.map((wishlist) => (
           <div key={wishlist.id} className="flex items-center py-4">
             <div className="flex w-[320px] items-center gap-3">
