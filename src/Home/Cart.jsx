@@ -79,7 +79,7 @@ const Cart = () => {
                 </h1>
               </div>
             ) : (
-              <div className="max-h-[500px] overflow-y-scroll ">
+              <div className="max-h-[400px] overflow-y-scroll ">
                 {basket.map((product) => (
                   <div key={product.id} className="flex items-center py-4">
                     <div className="flex w-[310px] items-center gap-3">

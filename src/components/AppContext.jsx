@@ -25,18 +25,11 @@ export const AppProvider = ({ children }) => {
   }, [basket]);
 
   const addToCart = (item) => {
-    setCart((prevCart) => {
-      const existingItem = prevCart.find((cartItem) => cartItem.id === item.id);
-      if (existingItem) {
-        return prevCart.map((cartItem) =>
-          cartItem.id === item.id
-            ? { ...cartItem, quantity: (cartItem.quantity || 1) + 1 }
-            : cartItem,
-        );
-      } else {
-        return [...prevCart, { ...item, quantity: 1 }];
-      }
-    });
+    if (cart.length === 0) {
+      setCart([item]);
+    } else {
+      setCart([item]);
+    }
   };
 
   const addToBasket = (product) => {

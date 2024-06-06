@@ -11,6 +11,7 @@ import { BiLogIn } from "react-icons/bi";
 import AccountDetails from "./AccountDetails";
 import Address from "./Address";
 import Orders from "./Orders";
+import WishList from "./WishList";
 
 const Account = () => {
   const { selectedTab, setSelectedTab } = useContext(AppContext);
@@ -32,10 +33,10 @@ const Account = () => {
               }`}
             >
               <FaRegUser
-                className={`h-5 w-5 ${selectedTab == 1 && "text-[#46A358]"}`}
+                className={`h-5 w-5 ${selectedTab === 1 && "text-[#46A358]"}`}
               />
               <span
-                className={`text-[15px] font-normal leading-[45px] ${selectedTab == 1 && "font-bold text-[#46A358]"}`}
+                className={`text-[15px] font-normal leading-[45px] ${selectedTab === 1 && "font-bold text-[#46A358]"}`}
               >
                 Account Details
               </span>
@@ -52,7 +53,7 @@ const Account = () => {
                 className={`h-5 w-5 ${selectedTab === 2 && "text-[#46A358]"}`}
               />
               <span
-                className={`text-[15px] font-normal leading-[45px] ${selectedTab == 2 && "font-bold text-[#46A358]"}`}
+                className={`text-[15px] font-normal leading-[45px] ${selectedTab === 2 && "font-bold text-[#46A358]"}`}
               >
                 Address
               </span>
@@ -69,7 +70,7 @@ const Account = () => {
                 className={`h-5 w-5 ${selectedTab === 3 && "text-[#46A358]"}`}
               />
               <span
-                className={`text-[15px] font-normal leading-[45px] ${selectedTab == 3 && "font-bold text-[#46A358]"}`}
+                className={`text-[15px] font-normal leading-[45px] ${selectedTab === 3 && "font-bold text-[#46A358]"}`}
               >
                 Orders
               </span>
@@ -86,7 +87,7 @@ const Account = () => {
                 className={`h-5 w-5 ${selectedTab === 4 && "text-[#46A358]"}`}
               />
               <span
-                className={`text-[15px] font-normal leading-[45px] ${selectedTab == 4 && "font-bold text-[#46A358]"}`}
+                className={`text-[15px] font-normal leading-[45px] ${selectedTab === 4 && "font-bold text-[#46A358]"}`}
               >
                 Wishlist
               </span>
@@ -103,7 +104,7 @@ const Account = () => {
                 className={`h-5 w-5 ${selectedTab === 5 && "text-[#46A358]"}`}
               />
               <span
-                className={`text-[15px] font-normal leading-[45px] ${selectedTab == 5 && "font-bold text-[#46A358]"}`}
+                className={`text-[15px] font-normal leading-[45px] ${selectedTab === 5 && "font-bold text-[#46A358]"}`}
               >
                 Reports
               </span>
@@ -120,7 +121,7 @@ const Account = () => {
                 className={`h-5 w-5 ${selectedTab === 6 && "text-[#46A358]"}`}
               />
               <span
-                className={`text-[15px] font-normal leading-[45px] ${selectedTab == 6 && "font-bold text-[#46A358]"}`}
+                className={`text-[15px] font-normal leading-[45px] ${selectedTab === 6 && "font-bold text-[#46A358]"}`}
               >
                 Downloads
               </span>
@@ -137,7 +138,7 @@ const Account = () => {
                 className={`h-5 w-5 ${selectedTab === 7 && "text-[#46A358]"}`}
               />
               <span
-                className={`text-[15px] font-normal leading-[45px] ${selectedTab == 7 && "font-bold text-[#46A358]"}`}
+                className={`text-[15px] font-normal leading-[45px] ${selectedTab === 7 && "font-bold text-[#46A358]"}`}
               >
                 Supports
               </span>
@@ -154,6 +155,7 @@ const Account = () => {
           {selectedTab === 1 && <AccountDetails />}
           {selectedTab === 2 && <Address />}
           {selectedTab === 3 && <Orders />}
+          {/* {selectedTab === 4 && <WishList />} */}
         </div>
       </div>
     </div>
